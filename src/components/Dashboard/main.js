@@ -1,14 +1,14 @@
 // Our data we will use:
+import {Button} from 'antd';
 
-
-
+import {productCatalog, productTitle, productPrice} from './styles.css';
 const products = [
     {
         "id": 1,
         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
         "price": 109.95,
         "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        "category_id": 3, 
+        "category_id": 3,
         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
         "qty": 50
     },
@@ -185,14 +185,41 @@ const products = [
     }
 ]
 
-// import productdata from './products.json';
-
-// console.log(productdata);
 
 // Setup function to render our ProductCatalog on the homepage
-const dashboard = function() {
-    ReactDOM.render(<ProductCatalog products={products}></ProductCatalog>, document.getElementById('product-catalog'));
+function Dashboard() {
+    return (
+        <div>
+            {products.map(product => ProductTile(product))}
+        </div>
+    )
+}
+
+function ProductTile(product) {
+
+    return (
+        <div className="product-catalog">
+            <div className="card-image">
+                <figure className="image is-4by3">
+                    <img className={"images"} src={product.image} alt="Placeholder image"></img>
+                </figure>
+            </div>
+            <div className="card-content">
+                <p className="title product-title">{product.title}</p>
+                <p className="title product-price">S${product.price}</p>
+
+                <div className="content">
+                    {product.description}
+                    <br></br>
+                </div>
+                <a className="button is-primary" href={"product.html?id=" + product.id.toString()}
+                   target="_blank">
+                    <strong className={'button'}>Add to Cart</strong>
+                </a>
+            </div>
+        </div>
+    )
 }
 
 // Call our setup function
-dashboard();
+export default Dashboard;
