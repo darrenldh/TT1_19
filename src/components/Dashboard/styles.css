@@ -37,26 +37,8 @@
     font-size: 3em;
 }
 
-#inner-large-banner {
-    height: 40%;
-    width: 100%;
-    background-image: url('img/forest.jpg');
-    background-size: cover;
-    background-position: 50% 25%;
-}
 
-#wrapper {
-    width: 80%;
-    min-height: 70%;
-    /* margin-top: -100px; */
-    background-color: var(--main-top-background-color);
-    margin: 100px auto 0 auto;
-    padding: 30px;
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-    border-radius: .25rem;
-}
-
-#product-catalog {
+.product-catalog {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -69,4 +51,11 @@
 
 .product-price {
     font-size: 2em;
+}
+
+.images {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
 }
