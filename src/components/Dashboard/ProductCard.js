@@ -22,13 +22,12 @@ class ProductCard extends Component {
                         <br></br>
                     </div>
                     <a class="button is-primary" href={"product.html?id=" + this.props.product.id.toString()} target="_blank">
-                        <strong>Add to cart</strong>
+                        <strong>Add to Cart</strong>
                     </a>
                 </div>
             </div>
         )
     }
-    
 }
 
 export default ProductCard;

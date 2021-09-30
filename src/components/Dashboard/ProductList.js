@@ -4,10 +4,13 @@ import ProductCard from './ProductCard';
 //components/Dashboard/ProductList.js
 
 class ProductList extends Component {
+    // creates a ProductCard obj to be rendered
     renderCard = (current_item) => {
         return <ProductCard product={current_item}></ProductCard>;
     }
 
+    // Iterate through  product list and calls renderCard
+    // creates the ProductTile object
     render() {
         let cards = [];
         for (let i = 0; i < this.props.products.length; i++) {
@@ -16,7 +19,6 @@ class ProductList extends Component {
         }
         return cards;
     }
-
 }
 
 export default ProductList;
