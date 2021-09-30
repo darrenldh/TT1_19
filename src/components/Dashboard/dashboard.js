@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
-import productData from './products.json'
+import productData from '../../backend/dataset/products.json'
 
 
 const products = productData;
