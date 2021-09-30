@@ -1,24 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
 
 
-//components/Dashboard/ProductCard.js
 
+class ProductCard extends Component {
+    
+    // Renders the ProductCard with Product Information
+    render() {
+        return (
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src={this.props.product.image} alt="Placeholder image"></img>
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title product-title">{this.props.product.title}</p>
+                    <p class="price product-price">{this.props.product.price}</p>
 
-const ProductCard = ({ title, price, description, imageUrl }) => {
-    return (
-        <div className="row product">
-        <div className="col-md-2">
-            <img src={imageUrl} alt={title} height="150" />
-        </div>
-        <div className="col-md-8 product-detail">
-            <h4>{title}</h4>
-            <div dangerouslySetInnerHTML={{__html: description}}></div>
-        </div>
-        <div className="col-md-2 product-price">
-            {price}
-        </div>
-        </div>
-    );
+                    <div class="content">
+                        {this.props.product.description}
+                        <br></br>
+                    </div>
+                    <a class="button is-primary" href={"product.html?id=" + this.props.product.id.toString()} target="_blank">
+                        <strong>Add to cart</strong>
+                    </a>
+                </div>
+            </div>
+        )
+    }
+    
 }
 
 export default ProductCard;

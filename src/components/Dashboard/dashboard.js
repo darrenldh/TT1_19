@@ -10,5 +10,5 @@ const products = productData;
 const Dashboard = function() {
     ReactDOM.render(<ProductList products={products}></ProductList>, document.getElementById('product-list'));
 }
-  
+
 export default Dashboard;
