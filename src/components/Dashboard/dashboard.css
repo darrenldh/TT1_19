@@ -17,6 +17,7 @@
     color: var(--main-accent-color);
     font-family: 'Inconsolata', monospace;
     font-size: 3em;
+    padding: 1.5em 1em;
 }
 
 #inner-large-banner {
