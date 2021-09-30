@@ -4,26 +4,19 @@ import ProductCard from './ProductCard';
 //components/Dashboard/ProductList.js
 
 class ProductList extends Component {
-    constructor(props) {
-    super(props);
-
-    this.state = {
-        products: [],
+    renderCard = (current_item) => {
+        return <ProductCard product={current_item}></ProductCard>;
     }
-    }
-
 
     render() {
-        return (
-            <div className="container main-content">
-            {
-                this.state.products.map(product => {
-                return <ProductCard key={product.id} image={product.media.source} name={product.name} description={product.description} price={product.price.formatted_with_symbol} />
-                })
-            }
-            </div>
-        );
+        let cards = [];
+        for (let i = 0; i < this.props.products.length; i++) {
+            const current_item = this.props.products[i];
+            cards.push(this.renderTile(current_item));
+        }
+        return cards;
     }
+
 }
 
 export default ProductList;

@@ -1,23 +1,14 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ProductList from './ProductList';
+import productData from './products.json'
 
 
+const products = productData;
 
-// function Dashboard() {
-//     return(
-//         <h2>Dashboard</h2>
-//     );
-// }
 
-function Dashboard() {
-    return (
-      <div className="container">
-        <header className="header">
-          <h1>My Products</h1>
-        </header>
-        <ProductList />
-      </div>
-    );
+const Dashboard = function() {
+    ReactDOM.render(<ProductList products={products}></ProductList>, document.getElementById('product-list'));
 }
   
 export default Dashboard;
